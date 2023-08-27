@@ -6,4 +6,14 @@ setInterval(function () {
 
   pragueDate.innerHTML = pragueZone.format("dddd Do MMMM");
   pragueTime.innerHTML = pragueZone.format("hh:mm:ss [<small>]A[</small>]");
+
+  let bengaluruElement = document.querySelector("#bengaluru");
+  let bengaluruDate = bengaluruElement.querySelector(".date");
+  let bengaluruTime = bengaluruElement.querySelector(".time");
+  let bengaluruZone = moment().tz("Asia/Kolkata");
+
+  bengaluruDate.innerHTML = bengaluruZone.format("dddd Do MMMM");
+  bengaluruTime.innerHTML = bengaluruZone.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
 }, 1000);

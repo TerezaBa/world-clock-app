@@ -22,4 +22,10 @@ select {
 
 .time {
   font-size: 50px;
+  font-weight: bold;
+}
+
+.time small {
+  font-size: 28px;
+  font-weight: light;
 }

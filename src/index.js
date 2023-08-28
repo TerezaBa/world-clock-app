@@ -29,16 +29,17 @@ function updateCity(event) {
 
   citiesElement.innerHTML = `<div class="row">
   <div class="col-6">
-  <h3>${cityName}</h3>
-    <div class="date">${cityTime.format("dddd Do MMMM")}</div>
+  <h2>${cityName}</h2>
+    <div class="date opacity-75">${cityTime.format("dddd Do MMMM")}</div>
   </div>
   <div class="col-6">
-    <div class="time">
+    <div class="text-end time">
       ${cityTime.format("hh:mm:ss")}
       <small>${cityTime.format("A")}</small>
     </div>
   </div>
-</div>`;
+</div>
+<a href="/">Homepage</a>`;
 }
 
 let selectedCity = document.querySelector("#city");

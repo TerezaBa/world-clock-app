@@ -18,32 +18,34 @@
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
-      <select id="city">
-        <option value="">Choose a city</option>
-        <option value="Europe/Chisinau">Chisinau</option>
-        <option value="America/Los_Angeles">Los Angeles</option>
-        <option value="Africa/Kigali">Kigali</option>
-      </select>
+      <div class="app-container">
+        <h1 class="text-center mb-4">World Clock</h1>
+        <select id="city">
+          <option value="">Choose a city</option>
+          <option value="Europe/Chisinau">Chisinau</option>
+          <option value="America/Los_Angeles">Los Angeles</option>
+          <option value="Africa/Kigali">Kigali</option>
+        </select>
 
-      <div class="cities" id="cities">
-        <div class="row" id="prague">
-          <h2>Prague</h2>
-          <div class="col-6">
-            <div class="date"></div>
+        <div class="cities mt-4" id="cities">
+          <div class="row" id="prague">
+            <div class="col-6">
+              <h3>Prague</h3>
+              <div class="date"></div>
+            </div>
+            <div class="col-6">
+              <div class="time"></div>
+            </div>
           </div>
-          <div class="col-6">
-            <div class="time"></div>
-          </div>
-        </div>
-        <br />
-        <div class="row" id="bengaluru">
-          <h2>Bengaluru</h2>
-          <div class="col-6">
-            <div class="date"></div>
-          </div>
-          <div class="col-6">
-            <div class="time"></div>
+          <br />
+          <div class="row" id="bengaluru">
+            <div class="col-6">
+              <h3>Bengaluru</h3>
+              <div class="date"></div>
+            </div>
+            <div class="col-6">
+              <div class="time"></div>
+            </div>
           </div>
         </div>
       </div>

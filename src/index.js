@@ -28,8 +28,8 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities");
 
   citiesElement.innerHTML = `<div class="row">
-  <h2>${cityName}</h2>
   <div class="col-6">
+  <h3>${cityName}</h3>
     <div class="date">${cityTime.format("dddd Do MMMM")}</div>
   </div>
   <div class="col-6">

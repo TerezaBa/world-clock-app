@@ -1,27 +1,41 @@
 function updateTime() {
-  // Prague
-  let pragueElement = document.querySelector("#prague");
-  let pragueDate = pragueElement.querySelector(".date");
-  let pragueTime = pragueElement.querySelector(".time");
-  let pragueZone = moment().tz("Europe/Prague");
-  pragueDate.innerHTML = pragueZone.format("dddd Do MMMM");
-  pragueTime.innerHTML = pragueZone.format("hh:mm:ss [<small>]A[</small>]");
+  let loadedCities = [
+    {
+      city: "Prague",
+      zone: "Europe/Prague",
+    },
+    {
+      city: "Bengaluru",
+      zone: "Asia/Kolkata",
+    },
+  ];
 
-  // Bengaluru
-  let bengaluruElement = document.querySelector("#bengaluru");
-  let bengaluruDate = bengaluruElement.querySelector(".date");
-  let bengaluruTime = bengaluruElement.querySelector(".time");
-  let bengaluruZone = moment().tz("Asia/Kolkata");
-  bengaluruDate.innerHTML = bengaluruZone.format("dddd Do MMMM");
-  bengaluruTime.innerHTML = bengaluruZone.format(
-    "hh:mm:ss [<small>]A[</small>]"
-  );
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = "";
+
+  loadedCities.forEach(function (loadedCity) {
+    let timeZone = moment().tz(loadedCity.zone);
+
+    let citiesHTML = `<div class="d-flex justify-content-between"">
+            <div class="city">
+              <h2>${loadedCity.city}</h2>
+              <div class="date opacity-75">${timeZone.format(
+                "dddd Do MMMM"
+              )}</div>
+            </div>
+            <div class="text-end time">${timeZone.format(
+              "hh:mm:ss"
+            )} <small>${timeZone.format("A")}</small></div>
+          </div>`;
+    citiesElement.innerHTML += citiesHTML;
+  });
 }
 
 updateTime();
-setInterval(updateTime, 1000);
+const myInterval = setInterval(updateTime, 1000);
 
 function updateCity(event) {
+  clearInterval(myInterval);
   let timeZone = event.target.value;
   if (timeZone === "current") {
     timeZone = moment.tz.guess();
@@ -30,18 +44,16 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities");
   let cityName = timeZone.replace("_", " ").split("/")[1];
 
-  citiesElement.innerHTML = `<div class="row">
-  <div class="col-6">
-  <h2>${cityName}</h2>
-    <div class="date opacity-75">${cityTime.format("dddd Do MMMM")}</div>
-  </div>
-  <div class="col-6">
+  citiesElement.innerHTML = `<div class="d-flex justify-content-between">
+    <div class="city">
+      <h2>${cityName}</h2>
+      <div class="date opacity-75">${cityTime.format("dddd Do MMMM")}</div>
+    </div>
     <div class="text-end time">
       ${cityTime.format("hh:mm")}
       <small>${cityTime.format("A")}</small>
     </div>
-  </div>
-</div>`;
+  </div>`;
 
   let h1Element = document.querySelector("h1");
   h1Element.innerHTML = `<h1 class="text-center fw-bold mb-4"><a href="/">World Clock</a></h1>`;

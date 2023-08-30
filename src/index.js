@@ -43,7 +43,9 @@ function updateCity(event) {
   let cityTime = moment().tz(timeZone);
   let citiesElement = document.querySelector("#cities");
   let cityName = timeZone.replace("_", " ").split("/")[1];
-
+  if (timeZone === "America/Los_Angeles") {
+    cityName = "San Francisco";
+  }
   citiesElement.innerHTML = `<div class="d-flex justify-content-between pt-4">
     <div class="city">
       <h2>${cityName}</h2>

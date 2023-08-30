@@ -16,7 +16,7 @@ function updateTime() {
   loadedCities.forEach(function (loadedCity) {
     let timeZone = moment().tz(loadedCity.zone);
 
-    let citiesHTML = `<div class="d-flex justify-content-between"">
+    let citiesHTML = `<div class="d-flex justify-content-between pt-4">
             <div class="city">
               <h2>${loadedCity.city}</h2>
               <div class="date opacity-75">${timeZone.format(
@@ -44,7 +44,7 @@ function updateCity(event) {
   let citiesElement = document.querySelector("#cities");
   let cityName = timeZone.replace("_", " ").split("/")[1];
 
-  citiesElement.innerHTML = `<div class="d-flex justify-content-between">
+  citiesElement.innerHTML = `<div class="d-flex justify-content-between pt-4">
     <div class="city">
       <h2>${cityName}</h2>
       <div class="date opacity-75">${cityTime.format("dddd Do MMMM")}</div>

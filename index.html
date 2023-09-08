@@ -21,22 +21,22 @@
     <div class="container">
       <div class="app-container">
         <h1 class="text-center fw-bold mb-4" id="world-clock">World Clock</h1>
-        <select id="city" class="opacity-75">
-          <option value="">Choose a city</option>
-          <option value="current">Current timezone</option>
-          <option value="Europe/Chisinau">Chisinau</option>
-          <option value="America/Los_Angeles">San Francisco</option>
-          <option value="Africa/Kigali">Kigali</option>
-        </select>
 
-        <form action="" id="search-form">
-          <input
-            type="text"
-            placeholder="Enter a city"
-            autofocus="on"
-            id="search-area"
-          />
-          <input type="submit" value="Search" />
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter a city"
+                autofocus="on"
+                id="search-area"
+              />
+            </div>
+            <div class="col-3">
+              <input type="submit" class="btn btn-dark" value="Search" />
+            </div>
+          </div>
         </form>
 
         <div class="cities" id="cities"></div>

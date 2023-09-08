@@ -8,6 +8,14 @@ function updateTime() {
       city: "Bengaluru",
       zone: "Asia/Kolkata",
     },
+    {
+      city: "Tokyo",
+      zone: "Asia/Tokyo",
+    },
+    {
+      city: "San Francisco",
+      zone: "America/Los_Angeles",
+    },
   ];
 
   let citiesElement = document.querySelector("#cities");
@@ -61,16 +69,14 @@ function updateCity(event) {
   h1Element.innerHTML = `<h1 class="text-center fw-bold mb-4"><a href="/">World Clock</a></h1>`;
 }
 
-let selectedCity = document.querySelector("#city");
-selectedCity.addEventListener("change", updateCity);
-
-let globalCityName = "Tokyo";
-
 function showTime(response, city) {
   console.log(response, city);
 
   console.log(response.timestamp);
   let timestamp = moment.unix(response.timestamp);
+
+  console.log(moment("2023-09-08 20:00:27").format("dddd Do MMMM hh:mm:ss"));
+  console.log(timestamp);
   clearInterval(myInterval);
   document.querySelector(
     "#cities"

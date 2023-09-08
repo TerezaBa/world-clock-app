@@ -13,11 +13,8 @@
   max-width: 700px;
 }
 
-select {
-  display: block;
-  width: 600px;
-  padding: 10px;
-  font-size: 18px;
+.btn {
+  padding: 0.375rem 2.75rem;
 }
 
 .time {

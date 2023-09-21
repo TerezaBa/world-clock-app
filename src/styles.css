@@ -26,3 +26,51 @@
   font-size: 28px;
   font-weight: light;
 }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .app-container {
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .date {
+    font-size: 8px;
+  }
+
+  .time {
+    font-size: 15px;
+  }
+
+  .time small {
+    font-size: 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 0.375rem 0.4rem;
+  }
+
+  .container .col-3,
+  .col-9 {
+    padding: 0;
+  }
+
+  input {
+    line-height: 1.2;
+  }
+}
